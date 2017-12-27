@@ -51,36 +51,7 @@ define(function (require) {
                     });
                 }
             }
-
-            function trackFieldChange(target, value, callback) {
-                //@params target: an observable or observableArray;
-                //@params value: initial value of target;
-                //@params callback: call this function when observables are changed;
-                var stateAccessor = ko.observable(false);
-                subsStateAccessor(stateAccessor, callback);
-                function checkObs(obs) {
-                    if (!ko.isObservable(obs)) {
-                        throw new Error("sp.app: Parameter target for function trackChange should be observable.");
-                    }
-                }
-                if (target instanceof Array && target.length > 0) {
-                    target.forEach(function (obs) {
-                        checkObs(obs);
-                        subscribe(obs, {
-                            stateAccessor: stateAccessor
-                        });
-                    });
-                } else {
-                    checkObs(target);
-                    if (value !== undefined) {
-                        target(value);
-                    }
-                    subscribe(target, {
-                        stateAccessor: stateAccessor
-                    });
-                }
-            }
-
+            
             function trackLeafNodesChange(root, options, callback)
             {
                 var stateAccessor = ko.observable(false);
@@ -145,13 +116,11 @@ define(function (require) {
                 }
             };
             return {
-                detectFieldChange: trackFieldChange,
                 detect: track
             };
         })();
 
     return {
-        detectFieldChange: koExtender.detectFieldChange,
         detect: koExtender.detect
     }
 });
