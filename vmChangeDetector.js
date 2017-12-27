@@ -52,7 +52,7 @@ define(function (require) {
                 }
             }
 
-            function trackChange(target, value, callback) {
+            function trackFieldChange(target, value, callback) {
                 //@params target: an observable or observableArray;
                 //@params value: initial value of target;
                 //@params callback: call this function when observables are changed;
@@ -145,13 +145,13 @@ define(function (require) {
                 }
             };
             return {
-                detectChange: trackChange,
+                detectFieldChange: trackFieldChange,
                 detect: track
             };
         })();
 
     return {
-        detectChange: koExtender.detectChange,
+        detectFieldChange: koExtender.detectFieldChange,
         detect: koExtender.detect
     }
 });
