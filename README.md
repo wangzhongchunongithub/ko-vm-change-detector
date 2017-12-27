@@ -33,7 +33,7 @@ vm = {
 if so the detector will subscribe the fields that was defined as ko.observable/observableArray,
 and track changes happening on the observables/observableArrays under observables/observableArrays.   
 */
-vm_detector.detect(vm, { fullTracking: false }, function ()  
+vm_detector.detect(vm, { fullTracking: true }, function ()  
                 {  
                     console.log("There are changes happend on viewmodel");  
                 });  
