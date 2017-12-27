@@ -1,8 +1,8 @@
 # ko-vm-change-detector
 Define a module that help to call callback function once any change happened on KO view model.
 
-How to use  
-<code javascript>  
+How to use 
+```javascript
 vm = {    
     attr1: ko.observable(),  
     attr2: {  
@@ -14,9 +14,7 @@ ko_extender.detect(your, { fullTracking: false }, function ()
                 {  
                     console.log("There are changes happend on viewmodel");  
                 });  
-</code>  
 
-<code javascript>  
 vm = {  
     attr1: ko.observable(),  
     attr2: {  
@@ -32,4 +30,4 @@ ko_extender.detect(vm, { fullTracking: false }, function ()
                 {  
                     console.log("There are changes happend on viewmodel");  
                 });  
-</code>  
+```
