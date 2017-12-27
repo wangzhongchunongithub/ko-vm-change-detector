@@ -1,9 +1,10 @@
 # ko-vm-change-detector
 Define a module that help to call callback function once any change happened on KO view model.
 
-How to use 
+How to use detect
 ```javascript
-vm = {    
+var vm_detector = require("vmChangeDetector");
+var vm = {    
     attr1: ko.observable(),  
     attr2: {  
         attr3: ko.observableArray()  
@@ -13,7 +14,7 @@ vm = {
 you can set fullTracking as false, if so the detector will subscribe the leaf nodes that was defined as ko.observable/observableArray, 
 it will not track changes happening on the observables under observables.  
 */
-ko_extender.detect(your, { fullTracking: false }, function ()  
+vm_detector.detect(vm, { fullTracking: false }, function ()  
                 {  
                     console.log("There are changes happend on viewmodel");  
                 });  
@@ -32,7 +33,7 @@ vm = {
 if so the detector will subscribe the leaf nodes that was defined as ko.observable/observableArray,
 and track changes happening on the observables/observableArrays under observables/observableArrays.   
 */
-ko_extender.detect(vm, { fullTracking: false }, function ()  
+vm_detector.detect(vm, { fullTracking: false }, function ()  
                 {  
                     console.log("There are changes happend on viewmodel");  
                 });  
