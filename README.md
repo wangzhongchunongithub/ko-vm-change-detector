@@ -19,7 +19,9 @@ vm_detector.detect(vm, { fullTracking: false }, function ()
                     console.log("There are changes happend on viewmodel");  
                 });  
 
-//////////////////////////////////////////////////////////////////////////////
+```
+
+```javascript
 vm = {  
     attr1: ko.observable(),  
     attr2: {  
