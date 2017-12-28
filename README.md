@@ -16,7 +16,7 @@ it will not track changes happening on the observables under observables.
 */
 vm_detector.detect(vm, { fullTracking: false }, function ()  
                 {  
-                    console.log("There are changes happend on viewmodel");  
+                    console.log("There are changes happened on viewmodel");  
                 });  
 
 ```
@@ -38,6 +38,6 @@ and track changes happening on the observables/observableArrays under observable
 */
 vm_detector.detect(vm, { fullTracking: true }, function ()  
                 {  
-                    console.log("There are changes happend on viewmodel");  
+                    console.log("There are changes happened on viewmodel");  
                 });  
 ```
