@@ -40,13 +40,12 @@ define(function (require) {
                 } else {
                     var subs = accessor.subscribe(function (isChanged) {
                         if (isChanged) {
-                            // callback.bind(null,'changed prop name','path')();
                             callback();
                         }
                         if (typeof subs !== 'undefined') {
                             subs.dispose();
                         }
-                        //if user do some change , dispose all subscribe and do not track form field any more.
+                        //once any change happened , dispose all subscribe and do not track changes on form fields any more.
                         disposeAllSubs();
                     });
                 }
